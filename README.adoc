@@ -7,13 +7,13 @@ For a complete walkthrough of this repository, link:https://graphacademy.neo4j.c
 
 == Running the application
 
-To run the application, you must install the libraries listed in `requirements.txt`.
+```
+conda create -n neo_llm python=3.11
+conda activate neo_llm
+poetry install
+```
 
-[source,sh]
-pip install -r requirements.txt
-
-
-Then run the `streamlit run` command to start the app on link:http://localhost:8501/[http://localhost:8501/^].
+Then run `streamlit run bot.py to start the app on link:http://localhost:8501/[http://localhost:8501/^].
 
 [source,sh]
 streamlit run bot.py

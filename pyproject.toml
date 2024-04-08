@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "llm-chatbot-python"
+version = "0.1.0"
+description = ""
+authors = ["jillvillany <jillian.villany@ibm.com>"]
+readme = "README.md"
+packages = [{include = "llm_chatbot_python"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+langchain = "^0.1.14"
+openai = "^1.16.2"
+langchain-openai = "^0.1.1"
+neo4j-driver = "^5.19.0"
+streamlit = "^1.33.0"
+langchainhub = "^0.1.15"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
