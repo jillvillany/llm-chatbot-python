@@ -1,7 +1,7 @@
 from langchain.agents import AgentExecutor, create_react_agent
 from langchain import hub
 from langchain.tools import Tool
-from llm import llm
+from llm import openai_llm, watsonx_llm
 from langchain.chains.conversation.memory import ConversationBufferWindowMemory
 
 
@@ -10,7 +10,7 @@ tools = [
     Tool.from_function(
         name="General Chat",
         description="For general chat not covered by other tools",
-        func=llm.invoke,
+        func=watsonx_llm.invoke,
         return_direct=False, # (!)
         handle_parsing_errors=True # (!)
     )
@@ -23,7 +23,7 @@ memory = ConversationBufferWindowMemory(
 )
 
 agent_prompt = hub.pull("hwchase17/react-chat")
-agent = create_react_agent(llm, tools, agent_prompt)
+agent = create_react_agent(watsonx_llm, tools, agent_prompt)
 agent_executor = AgentExecutor(
     agent=agent,
     tools=tools,
