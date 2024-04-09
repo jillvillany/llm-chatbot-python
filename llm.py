@@ -11,7 +11,7 @@ openai_llm = ChatOpenAI(
     model=st.secrets["OPENAI_MODEL"],
 )
 watsonx_llm = WatsonxLLM(
-    model_id=ModelTypes.FLAN_UL2.value,
+    model_id=ModelTypes.GRANITE_13B_CHAT_V2.value,
     url=st.secrets["WATSONX_URL"],
     apikey=st.secrets["IBM_CLOUD_API_KEY"],
     project_id=st.secrets["WATSONX_PROJECT_ID"]
